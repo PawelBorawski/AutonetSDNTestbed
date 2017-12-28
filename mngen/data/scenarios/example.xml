@@ -1,0 +1,86 @@
+<scenario>
+  <topology>
+    <switches>
+      <switch id="s1" name="Galway"/>
+      <switch id="s2" name="Limerick"/>
+      <switch id="s3" name="Cork"/>
+      <switch id="s4" name="CityWest"/>
+      <switch id="s5" name="DCU(DublinCityUniversity"/>
+      <switch id="s6" name="TDC(TrinityCollegeDublin)"/>
+      <switch id="s7" name="Kilcarbery"/>
+    </switches>
+    <hosts>
+      <host id="h1" name="Galway1"/>
+      <host id="h2" name="Galway2"/>
+      <host id="h3" name="Limerick1"/>
+      <host id="h4" name="Limerick2"/>
+      <host id="h5" name="Cork1"/>
+      <host id="h6" name="Cork2"/>
+      <host id="h7" name="CityWest1"/>
+      <host id="h8" name="CityWest2"/>
+      <host id="h9" name="DCU(DublinCityUniversity1"/>
+      <host id="h10" name="DCU(DublinCityUniversity2"/>
+      <host id="h11" name="TDC(TrinityCollegeDublin)1"/>
+      <host id="h12" name="TDC(TrinityCollegeDublin)2"/>
+      <host id="h13" name="Kilcarbery1"/>
+      <host id="h14" name="Kilcarbery2"/>
+    </hosts>
+    <links>
+      <link src="s1" dst="h1" latency="0" bw="0" type="host"/>
+      <link src="s1" dst="h2" latency="0" bw="0" type="host"/>
+      <link src="s2" dst="h3" latency="0" bw="0" type="host"/>
+      <link src="s2" dst="h4" latency="0" bw="0" type="host"/>
+      <link src="s3" dst="h5" latency="0" bw="0" type="host"/>
+      <link src="s3" dst="h6" latency="0" bw="0" type="host"/>
+      <link src="s4" dst="h7" latency="0" bw="0" type="host"/>
+      <link src="s4" dst="h8" latency="0" bw="0" type="host"/>
+      <link src="s5" dst="h9" latency="0" bw="0" type="host"/>
+      <link src="s5" dst="h10" latency="0" bw="0" type="host"/>
+      <link src="s6" dst="h11" latency="0" bw="0" type="host"/>
+      <link src="s6" dst="h12" latency="0" bw="0" type="host"/>
+      <link src="s7" dst="h13" latency="0" bw="0" type="host"/>
+      <link src="s7" dst="h14" latency="0" bw="0" type="host"/>
+      <link src="s1" dst="s4" latency="1.54346966993" bw="1" type="network"/>
+      <link src="s1" dst="s7" latency="1.54346966993" bw="1" type="network"/>
+      <link src="s2" dst="s3" latency="0.433210792513" bw="1" type="network"/>
+      <link src="s2" dst="s4" latency="1.1687380197" bw="1" type="network"/>
+      <link src="s2" dst="s7" latency="1.1687380197" bw="1" type="network"/>
+      <link src="s3" dst="s4" latency="0.873537334294" bw="1" type="network"/>
+      <link src="s4" dst="s5" latency="0.0" bw="1" type="network"/>
+      <link src="s4" dst="s6" latency="0.0" bw="1" type="network"/>
+      <link src="s4" dst="s6" latency="0.0" bw="1" type="network"/>
+      <link src="s4" dst="s7" latency="0.0" bw="1" type="network"/>
+      <link src="s4" dst="s7" latency="0.0" bw="1" type="network"/>
+      <link src="s5" dst="s7" latency="0.0" bw="1" type="network"/>
+      <link src="s6" dst="s7" latency="0.0" bw="1" type="network"/>
+    </links>
+  </topology>
+  <traffic>
+    <flows>
+      <flow src="h1" dst="h3" c_rate="1.08406761661" delay="2.28733646978" l4type="tcp" duration="17"/>
+      <flow src="h2" dst="h5" c_rate="1.84375841638" delay="4.06833332202" l4type="tcp" duration="4"/>
+      <flow src="h2" dst="h4" c_rate="1.88444276737" delay="1.82527523842" l4type="tcp" duration="16"/>
+      <flow src="h3" dst="h2" c_rate="1.27140021776" delay="3.84270437251" l4type="tcp" duration="4"/>
+      <flow src="h3" dst="h2" c_rate="1.16010704516" delay="4.93000670832" l4type="tcp" duration="19"/>
+      <flow src="h4" dst="h2" c_rate="1.64245513091" delay="3.41603335562" l4type="tcp" duration="13"/>
+      <flow src="h4" dst="h12" c_rate="1.13541821377" delay="1.11865670283" l4type="tcp" duration="14"/>
+      <flow src="h5" dst="h1" c_rate="1.88818303858" delay="3.48778495732" l4type="tcp" duration="19"/>
+      <flow src="h5" dst="h3" c_rate="1.67195017823" delay="1.56329060973" l4type="tcp" duration="20"/>
+      <flow src="h6" dst="h14" c_rate="1.61626510351" delay="4.1990095716" l4type="tcp" duration="7"/>
+      <flow src="h6" dst="h3" c_rate="1.50144844908" delay="3.6641478631" l4type="tcp" duration="10"/>
+      <flow src="h7" dst="h13" c_rate="1.0119127704" delay="2.23626161074" l4type="tcp" duration="8"/>
+      <flow src="h8" dst="h6" c_rate="1.5924161841" delay="1.53312646071" l4type="tcp" duration="5"/>
+      <flow src="h9" dst="h4" c_rate="1.35170779097" delay="1.90479788581" l4type="tcp" duration="11"/>
+      <flow src="h9" dst="h10" c_rate="1.46859444495" delay="2.92781812633" l4type="tcp" duration="6"/>
+      <flow src="h10" dst="h1" c_rate="1.22545172319" delay="0.229379603869" l4type="tcp" duration="11"/>
+      <flow src="h10" dst="h7" c_rate="1.36758784491" delay="0.486546421787" l4type="tcp" duration="15"/>
+      <flow src="h11" dst="h6" c_rate="1.27447905579" delay="4.14539553994" l4type="tcp" duration="16"/>
+      <flow src="h11" dst="h6" c_rate="1.04630389483" delay="1.59192028512" l4type="tcp" duration="14"/>
+      <flow src="h12" dst="h13" c_rate="1.28030061544" delay="2.19664648497" l4type="tcp" duration="2"/>
+      <flow src="h12" dst="h10" c_rate="1.95435505916" delay="1.93603752311" l4type="tcp" duration="8"/>
+      <flow src="h13" dst="h8" c_rate="1.70789714348" delay="3.37696606962" l4type="tcp" duration="13"/>
+      <flow src="h13" dst="h4" c_rate="1.05368021962" delay="0.1482801342" l4type="tcp" duration="13"/>
+      <flow src="h14" dst="h6" c_rate="1.64827212432" delay="0.656706204965" l4type="tcp" duration="6"/>
+    </flows>
+  </traffic>
+</scenario>

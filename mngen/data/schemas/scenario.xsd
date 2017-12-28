@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+         <!-- XML Schema Generated from XML Document on Fri Jun 30 2017 14:10:41 GMT+0200 (CEST) -->
+         <!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
+         <xs:element name="scenario">
+               <xs:complexType>
+                     <xs:sequence>
+                           <xs:element name="topology">
+                                 <xs:complexType>
+                                       <xs:sequence>
+                                             <xs:element name="switches">
+                                                   <xs:complexType>
+                                                         <xs:sequence>
+                                                               <xs:element name="switch" maxOccurs="unbounded">
+                                                                     <xs:complexType>
+                                                                           <xs:attribute name="id" type="xs:string" use="required"></xs:attribute>
+                                                                           <xs:attribute name="name" type="xs:string" use="required"></xs:attribute>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                         </xs:sequence>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                             <xs:element name="hosts">
+                                                   <xs:complexType>
+                                                         <xs:sequence>
+                                                               <xs:element name="host" maxOccurs="unbounded">
+                                                                     <xs:complexType>
+                                                                           <xs:attribute name="id" type="xs:string" use="required"></xs:attribute>
+                                                                           <xs:attribute name="name" type="xs:string" use="required"></xs:attribute>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                         </xs:sequence>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                             <xs:element name="links">
+                                                   <xs:complexType>
+                                                         <xs:sequence>
+                                                               <xs:element name="link" maxOccurs="unbounded">
+                                                                     <xs:complexType>
+                                                                           <xs:attribute name="src" type="xs:string" use="required"></xs:attribute>
+                                                                           <xs:attribute name="dst" type="xs:string" use="required"></xs:attribute>
+                                                                           <xs:attribute name="latency" type="xs:float" use="required"></xs:attribute>
+                                                                           <xs:attribute name="bw" type="xs:int" use="required"></xs:attribute>
+                                                                           <xs:attribute name="type" type="xs:string" use="required"></xs:attribute>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                         </xs:sequence>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                       </xs:sequence>
+                                 </xs:complexType>
+                           </xs:element>
+                           <xs:element name="traffic">
+                                 <xs:complexType>
+                                       <xs:sequence>
+                                             <xs:element name="flows">
+                                                   <xs:complexType>
+                                                         <xs:sequence>
+                                                               <xs:element name="flow" maxOccurs="unbounded">
+                                                                     <xs:complexType>
+                                                                           <xs:attribute name="src" type="xs:string" use="required"></xs:attribute>
+                                                                           <xs:attribute name="dst" type="xs:string" use="required"></xs:attribute>
+                                                                           <xs:attribute name="c_rate" type="xs:double" use="required"></xs:attribute>
+                                                                           <xs:attribute name="delay" type="xs:double" use="required"></xs:attribute>
+                                                                           <xs:attribute name="l4type" type="xs:string" use="required"></xs:attribute>
+                                                                           <xs:attribute name="duration" type="xs:int" use="required"></xs:attribute>
+                                                                     </xs:complexType>
+                                                               </xs:element>
+                                                         </xs:sequence>
+                                                   </xs:complexType>
+                                             </xs:element>
+                                       </xs:sequence>
+                                 </xs:complexType>
+                           </xs:element>
+                     </xs:sequence>
+               </xs:complexType>
+         </xs:element>
+   </xs:schema>

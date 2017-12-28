@@ -1,0 +1,6 @@
+Source: http://www.topology-zoo.org/dataset.html
+Converter: assessing-mininet github
+
+topology name format:
+
+gen_<topo_name>_<hosts distribution>_<hosts-per-switch>.py

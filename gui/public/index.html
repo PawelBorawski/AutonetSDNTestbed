@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app="AutonetSDNTestbed">
+
+<head lang="en">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>AUTONET SDN testbed</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="css/lib/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/lib/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/lib/animate.min.css" />
+    <link rel="stylesheet" href="css/lib/angular-busy.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.18.1/vis.min.css">
+    <link rel="stylesheet" type="text/css" href="css/lib/codemirror.css">
+    <link rel="stylesheet" href="css/lib/angular-material.min.css">
+    
+</head>
+
+<body>
+
+    <header class="image-bg-fixed-height">
+    </header>
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">AutoNET SDN Testbed</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse" ng-controller="HeaderController">
+                <ul class="nav navbar-nav">
+                    <!-- li ng-class="{ active: isActive('/')}"><a href='' ng-click="loadOverview()">Overview</a></li -->
+                    <li ng-class="{ active: isActive('/configuration')}"><a href='' ng-click="loadConfiguration()">Configuration</a></li>
+                    <li ng-class="{ active: isActive('/scenario')}"><a href='' ng-click="loadScenario()">Create scenario</a></li>
+                    <li ng-class="{ active: isActive('/modify')}"><a href='' ng-click="loadModify()">Modify scenario</a></li>
+                    <!-- li ng-class="{ active: isActive('/controller')}"><a href='' ng-click="loadController()">Controller</a></li -->
+                    <li ng-class="{ active: isActive('/network')}"><a href='' ng-click="loadNetwork()">Run scenario</a></li>
+                    <li ng-class="{ active: isActive('/results')}"><a href='' ng-click="loadResults()">View results</a></li>
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+
+
+
+    <div class="container">
+        <div class="starter-template">
+            <div ng-view></div>
+        </div>
+    </div>
+    <!-- scripts -->
+    <script src="js/lib/jquery.min.js"></script>
+    <script src="js/lib/angular.min.js"></script>
+    <script src="js/lib/angular-route.min.js"></script>
+    <script src="js/lib/angular-animate.min.js"></script>
+    <script src="js/lib/bootstrap.min.js"></script>
+    <script src="js/lib/angular-busy.js"></script>
+    <script type="text/javascript" src="js/lib/codemirror.js"></script>
+    <script type="text/javascript" src="js/lib/ui-codemirror.min.js"></script>
+    <script src="js/lib/angular-aria.min.js"></script>
+    <script src="js/lib/angular-material.min.js"></script>
+    <script src="js/lib/Chart.min.js"></script>
+    <script src="js/lib/angular-chart.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/services/scenario.js"></script>
+    <script src="js/services/network.js"></script>
+    <script src="js/controllers/header.js"></script>
+    <script src="js/controllers/configuration.js"></script>
+    <script src="js/controllers/overview.js"></script>
+    <script src="js/controllers/network.js"></script>
+    <script src="js/controllers/scenario.js"></script>
+    <script src="js/controllers/modify.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.18.1/vis.min.js"></script>
+</body>
+
+</html>

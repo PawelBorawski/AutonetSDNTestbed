@@ -1,0 +1,23 @@
+{
+  "name": "autonet-sdn-testbed",
+  "version": "1.0.0",
+  "description": "autonet sdn testbed application",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "sdn",
+    "testbed",
+    "autonet"
+  ],
+  "author": "AutoNET",
+  "license": "ISC",
+  "dependencies": {
+    "angular-chart.js": "^1.1.1",
+    "jshint": "^2.9.3",
+    "express": "^4.16.2",
+    "npmlog": "^4.1.2",
+    "run-sequence": "^1.2.2"
+  }
+}

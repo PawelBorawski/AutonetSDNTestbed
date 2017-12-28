@@ -1,0 +1,71 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="page-header">
+            <h1>View results</h1>
+        </div>
+    </div>
+</div>
+<div cg-busy="networkPromise" class="panel panel-default container" ng-controller="NetworkController">
+<div class="row">
+        <div class="col-lg-6">
+            <div class="well bs-component">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="form-group">
+                            <label class="col-lg-3 control-label">Scenario name</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" ng-init="resultsList[0].name" ng-model="result" ng-options="result as result.name for result in resultsList" ng-change="getLogsForResult(result.name)" id="scenarioInput">
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+                <div class="col-lg-9">
+                    <button type="button" class="btn btn-primary btn-lg" ng-click="deleteResult()">Delete</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 ">
+            <div class="well bs-component">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="form-group" >
+                            <label class="col-lg-3 control-label">Choose logs:</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" ng-model="logs" ng-options="logs as logs.name for logs in resultLogs" ng-change="displayResults(logs.id)">
+                                </select>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <canvas id="bar_client" class="chart chart-bar" chart-options="client_chart.options" chart-labels="client_chart.labels"
+                                                 chart-data="client_chart.data" chart-series="client_chart.series"
+                                                 chart-dataset-override="client_chart.datasetOverride"
+                                                 ng-show="client_chart.labels">
+        </canvas>
+        <canvas id="bar_server" class="chart chart-bar" chart-options="server_chart.options" chart-labels="server_chart.labels"
+                                                 chart-data="server_chart.data" chart-series="server_chart.series"
+                                                 chart-dataset-override="server_chart.datasetOverride"
+                                                 ng-show="server_chart.labels">
+        </canvas>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="well bs-component">
+            <p class="bs-component text-center">Client results</p>
+            <textarea ui-codemirror ng-model="resultClient" ui-codemirror-opts="editorOptions"></textarea>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="well bs-component">
+            <p class="bs-component text-center">Server results</p>
+            <textarea ui-codemirror ng-model="resultServer" ui-codemirror-opts="editorOptions"></textarea>
+            </div>
+        </div>
+    </div>
+</div>

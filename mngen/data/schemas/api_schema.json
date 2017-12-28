@@ -1,0 +1,171 @@
+{
+    "create": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "definitions": {},
+        "id": "create_scenario",
+        "properties": {
+            "scenario": {
+                "id": "/properties/scenario",
+                "properties": {
+                    "hosts_distribution": {
+                        "id": "/properties/scenario/properties/hosts_distribution",
+                        "type": "string"
+                    },
+                    "hosts_num": {
+                        "id": "/properties/scenario/properties/hosts_num",
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "link_bandwidth": {
+                        "id": "/properties/scenario/properties/link_bandwidth",
+                        "type": "number",
+                        "minimum": 0
+                    },
+                    "max_bitrate": {
+                        "id": "/properties/scenario/properties/max_bitrate",
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "max_delay": {
+                        "id": "/properties/scenario/properties/max_delay",
+                        "type": "integer",
+                        "minimum": 1
+                    },
+                    "max_duration": {
+                        "id": "/properties/scenario/properties/max_duration",
+                        "type": "integer",
+                        "minimum": 1
+                    },
+                    "max_flows": {
+                        "id": "/properties/scenario/properties/max_flows",
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "min_bitrate": {
+                        "id": "/properties/scenario/properties/min_bitrate",
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "min_flows": {
+                        "id": "/properties/scenario/properties/min_flows",
+                        "type": "integer",
+                        "minimum": 0
+                    },
+                    "name": {
+                        "id": "/properties/scenario/properties/name",
+                        "type": "string"
+                    },
+                    "topology": {
+                        "id": "/properties/scenario/properties/topology",
+                        "type": "string"
+                    },
+                    "traffic_type": {
+                        "id": "/properties/scenario/properties/traffic_type",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "name",
+                    "topology",
+                    "hosts_num",
+                    "hosts_distribution",
+                    "link_bandwidth",
+                    "min_flows",
+                    "max_flows",
+                    "min_bitrate",
+                    "max_bitrate",
+                    "traffic_type",
+                    "max_delay",
+                    "max_duration"
+                ],
+                "type": "object"
+            }
+        },
+        "type": "object"
+    },
+    "run": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "definitions": {},
+        "id": "run_scenario",
+        "properties": {
+            "controller_ip": {
+                "id": "/properties/controller_ip",
+                "type": "string"
+            },
+            "controller_port": {
+                "id": "/properties/controller_port",
+                "type": "integer"
+            },
+            "iterations": {
+                "id": "/properties/iterations",
+                "type": "integer"
+            },
+            "scenario": {
+                "id": "/properties/scenario",
+                "type": "string"
+            },
+            "tool": {
+                "id": "/properties/tool",
+                "type": "string"
+            }
+        },
+        "required": [
+                    "controller_ip",
+                    "controller_port",
+                    "iterations",
+                    "scenario",
+                    "tool"
+        ],
+        "type": "object"
+    },
+    "modify": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "definitions": {},
+        "id": "modify_scenario",
+        "properties": {
+            "name": {
+                "id": "/properties/name",
+                "type": "string"
+            },
+            "scenario": {
+                "id": "/properties/scenario",
+                "type": "string"
+            }
+        },
+        "required": [
+                    "name",
+                    "scenario"
+        ],
+        "type": "object"
+    },
+    "default": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "definitions": {},
+        "id": "default",
+        "properties": {
+            "name": {
+                "id": "/properties/name",
+                "type": "string"
+            }
+        },
+        "type": "object"
+    },
+    "delete": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "definitions": {},
+        "id": "get_schema",
+        "properties": {
+            "scenario": {
+                "id": "/properties/scenario",
+                "type": "string"
+            }
+        },
+        "type": "object"
+    }
+
+
+
+
+
+}
+

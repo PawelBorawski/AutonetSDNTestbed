@@ -1,0 +1,105 @@
+##########
+
+AUTONET Testbed - Mininet Scenario Creator
+
+##########
+
+DESCRIPTION
+
+ 
+
+################
+
+STARTUP GUIDE
+
+As REST-based WebService:
+
+In order to run server use:
+
+sudo python ./mn_gen_api.py 
+
+Implemented APIs:
+GET /topologies - 
+GET /scenarios - 
+
+
+From CLI
+
+In order to create test scenario use:
+
+sudo python ./mn_gen_cli.py create
+
+In order to run test scenario use:
+
+sudo python ./mn_gen_cli.py run 
+
+################
+
+Example:
+
+sudo python ./mn_gen_cli.py create -t abilene -T tcp --c_min 1 --c_max 2 -minf 4 -maxf 4
+
+Usage:
+test_launcher_itg.py [-h] [-l] [-t TOPOLOGY] [-B BANDWIDTH] [-lt] [-ls]
+                            [-d SCENARIOS_DIR] [-H HOSTS] [-dr] [-stp]
+                            [-o LOGS_DIR] [-r REPEAT] [--tool TOOL]
+                            [-T TRAFFIC_TYPE] [--c_min C_MIN] [--c_max C_MAX]
+                            [-g CLIENTS] [-f FLOWS]
+
+Mandatory: [-t TOPOLOGY] [-d SCENARIOS_DIR] [-T TRAFFIC_TYPE] [--c_min C_MIN] [--c_max C_MAX] [-g CLIENTS] [-f FLOWS]
+
+Params:
+-h, --help            show this help message and exit
+  -l, --store_logs      store logs (default: logs are discarded)
+  -t TOPOLOGY, --topology TOPOLOGY
+                        name of topology to run
+  -B BANDWIDTH, --bandwidth BANDWIDTH
+                        Bandwidth of links in Mbit/s (default: 1 Mbit/s)
+  -lt, --list-topologies
+                        list available topologies
+  -ls, --list-scenarios
+                        list available scenarios
+  -d SCENARIOS_DIR, --scenarios-dir SCENARIOS_DIR
+                        directory with scenarios (default: current directory)
+  -H HOSTS, --hosts HOSTS
+                        Number of hosts in network ('per switch' for uniform
+                        distribution)
+  -r, --random-distribution
+                        Random hosts distribution in network (default:
+                        uniform). Each switch will be connected with random number (in range 0-'numberOfHosts') of hosts.
+  -o LOGS_DIR, --logs-dir LOGS_DIR
+                        directory for storing logs (default: logs/ in scenario
+                        directory). Implies storing logs
+  -r REPEAT, --repeat REPEAT
+                        number of test case repeats (-1 for infinite).
+                        Warning: Logs will be overridden
+  -T TRAFFIC_TYPE, --traffic-type TRAFFIC_TYPE
+                        Type of generated traffic
+  --c_min C_MIN         Minimum bitrate of generated traffic
+  --c_max C_MAX         Maximum bitrate of generated traffic
+  -g CLIENTS, --clients CLIENTS
+                        Number of clients generating traffic
+  -f FLOWS, --flows FLOWS
+                        Number of flows per client
+
+################
+
+STARTUP TUTORIAL - z poziomu PROXY
+
+################
+
+1) Aby zintegrować 'kreator scenariuszy Mininet' z CoSDN proxy należy w /home/user/programs/defnet/other/mn_mods/ podmienić skrypt 'emn.sh' na skrypt znajdujący się z folderze 'emn_script' w tym projekcie. 
+Zaszły zmiany w sposobie wywoływania aplikacji 'test_launcher.py' - uruchamiany jest teraz w sposób bardziej "generyczny". 
+
+
+EMN parameters:
+[topology name]
+Format: <zoo-topology-name>-<links_bandwidth>:<host_distribution>-<hosts-per-switch>
+[scenario name]
+Format: iperf_<traffic_type>-<bitrate_min>:<bitrate_max>-<hosts_generating_traffic>-<flows_per_host>
+        ditg_<TO-DO>
+
+Example:
+
+sudo python test_launcher_itg.py -t agis -T tcp --c_min 1 --c_max 10 -g 4 -f 4
+

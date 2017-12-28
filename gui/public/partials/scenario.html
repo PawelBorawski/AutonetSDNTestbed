@@ -1,0 +1,116 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="page-header">
+            <h1>Create new network simulation scenario</h1>
+        </div>
+    </div>
+</div>
+<div cg-busy="scenarioPromise" class="panel panel-default container" ng-controller="ScenarioController">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="well bs-component">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="form-group">
+                            <label for="nameInput" class="col-lg-3 control-label">Scenario name</label>
+                            <div class="col-lg-9">
+                                <input type="text" ng-model="scenario.name" id="nameInput" class="form-control" placeholder="Scenario name" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="topologySelect" class="col-lg-3 control-label">Choose topology</label>
+                            <div class="col-lg-9">
+                                <select class="form-control" ng-model="scenario_gui.topology" ng-options="topology as topology.name for topology in topologies | orderBy:'name'" ng-change="topologyChanged(scenario_gui.topology.name)" id="topologySelect" />
+                                </select>
+                            </div>
+                        </div>
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">Chosen schema</div>
+                            <div class="panel-body">
+                                <img ng-src="{{topologyImage}}" class="img-responsive" />
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="col-lg-6 ">
+            <div class="well bs-component">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="form-group">
+                            <label for="hostsDistributionSelect" class="col-lg-4 control-label">Host's distribution</label>
+                            <div class="col-lg-4">
+                                <select class="form-control" ng-init="scenario_gui.hosts_distribution=hostsDistribution[0]" ng-model="scenario_gui.hosts_distribution" ng-options="distribution as distribution.name for distribution in hostsDistribution" id="hostsDistributionSelect" />
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="linkBadwidthInput" class="col-lg-4 control-label">Link bandwidth</label>
+                            <div class="col-lg-4">
+                                <input type="number" ng-model="scenario.link_bandwidth" id="linkBadwidthInput" class="form-control" placeholder="Link bandwidth" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="hostsNumInput" class="col-lg-4 control-label">Hosts per switch</label>
+                            <div class="col-lg-4">
+                                <input type="number" ng-model="scenario.hosts_num" id="hostsNumInput" class="form-control" placeholder="Hosts per switch" />
+                            </div>
+                        </div>
+                    </fieldset>
+                        <form class="form-horizontal">
+                            <legend>Traffic parameters</legend>
+                            <fieldset>
+                                <div class="form-group">
+                                    <label for="trafficTypeSelect" class="col-lg-4 control-label">Traffic type</label>
+                                    <div class="col-lg-4">
+                                        <select class="form-control" ng-init="scenario_gui.traffic_type=trafficTypes[0]" ng-model="scenario_gui.traffic_type" ng-options="trafficType as trafficType.name for trafficType in trafficTypes" id="trafficTypesSelect" />
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="minFlowsInput" class="col-lg-4 control-label">Min. flows</label>
+                                    <div class="col-lg-4">
+                                        <input type="number" ng-model="scenario.min_flows" id="minFlowsInput" class="form-control" placeholder="Min. flows" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="maxFlowsInput" class="col-lg-4 control-label">Max. flows</label>
+                                    <div class="col-lg-4">
+                                        <input type="number" ng-model="scenario.max_flows" id="maxFlowsInput" class="form-control" placeholder="Max. flows" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="minBitrateInput" class="col-lg-4 control-label">Min. bitrate</label>
+                                    <div class="col-lg-4">
+                                        <input type="number" ng-model="scenario.min_bitrate" id="minBitrateInput" class="form-control" placeholder="Min. bitrate" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="maxBitrateInput" class="col-lg-4 control-label">Max. bitrate</label>
+                                    <div class="col-lg-4">
+                                        <input type="number" ng-model="scenario.max_bitrate" id="maxBitrateInput" class="form-control" placeholder="Max. bitrate" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="maxDelayInput" class="col-lg-4 control-label">Max. delay</label>
+                                    <div class="col-lg-4">
+                                        <input type="number" ng-model="scenario.max_delay" id="maxDelayInput" class="form-control" placeholder="Max. delay" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="maxDurationInput" class="col-lg-4 control-label">Max. duration</label>
+                                    <div class="col-lg-4">
+                                        <input type="number" ng-model="scenario.max_duration" id="maxDurationInput" class="form-control" placeholder="Max. duration" />
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                </form>
+            </div>
+        </div>
+    </div>
+    <p class="bs-component text-center">
+        <button type="button" class="btn btn-primary btn-lg" ng-click="submit()">Submit</button>
+    </p>
+</div>
